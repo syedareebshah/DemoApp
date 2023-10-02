@@ -3,9 +3,15 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from '../screens/Home';
 import ScreenA from '../screens/ScreenA';
 import ScreenB from '../screens/ScreenB';
+import SplashScreen from 'react-native-splash-screen';
 
 const StackNavigation = () => {
   const Stack = createNativeStackNavigator();
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 3000);
+  }, []);
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
