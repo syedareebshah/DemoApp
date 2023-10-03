@@ -4,6 +4,7 @@ import Home from '../screens/Home';
 import ScreenA from '../screens/ScreenA';
 import ScreenB from '../screens/ScreenB';
 import SplashScreen from 'react-native-splash-screen';
+import {useNavigateToDeepLink} from '../hooks/deeplinking';
 
 const StackNavigation = () => {
   const Stack = createNativeStackNavigator();
@@ -12,6 +13,8 @@ const StackNavigation = () => {
       SplashScreen.hide();
     }, 3000);
   }, []);
+  useNavigateToDeepLink();
+
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} />
